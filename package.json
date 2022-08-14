@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/LDQs/ursa-utils/issues"
   },
-  "homepage": "https://github.com/LDQs/ursa-utils#readme"
+  "homepage": "https://github.com/LDQs/ursa-utils#readme",
+  "devDependencies": {
+    "@types/react": "^18.0.15",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "react-infinite-scroller": "^1.2.6"
+  }
 }
