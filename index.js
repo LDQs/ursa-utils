@@ -1,5 +1,7 @@
-import ReactInfiniteScrollerObserver from './src/components/react-infinite-scroller-observer';
+// import ReactInfiniteScrollerObserver from './src/components/react-infinite-scroller-observer';
 
-export {
-  ReactInfiniteScrollerObserver,
-};
+// export {
+//   ReactInfiniteScrollerObserver,
+// };
+
+export const ZERO = 0;
