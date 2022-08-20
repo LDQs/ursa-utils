@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
 import InfiniteScroller from 'react-infinite-scroller';
 
-interface IProps {
-  children: Node;
-  loadMore: () => void;
-  element?: Component;
-  hasMore?: boolean;
-  initialLoad?: boolean;
-  isReverse?: boolean;
-  loader?: Component;
-  pageStart?: number;
-  getScrollParent?: () => void;
-  threshold?: number;
-  useCapture?: boolean;
-  useWindow?: boolean;
-  root: HTMLElement;
-  targetElementClassName: string;
-  getELementsInViewport: (elements: Element[]) => void;
-}
+// interface IProps {
+//   children: Node;
+//   loadMore: () => void;
+//   element?: Component;
+//   hasMore?: boolean;
+//   initialLoad?: boolean;
+//   isReverse?: boolean;
+//   loader?: Component;
+//   pageStart?: number;
+//   getScrollParent?: () => void;
+//   threshold?: number;
+//   useCapture?: boolean;
+//   useWindow?: boolean;
+//   root: HTMLElement;
+//   targetElementClassName: string;
+//   getELementsInViewport: (elements: Element[]) => void;
+// }
 
-export default class ReactInfiniteScrollerObserver extends Component<IProps> {
-  private observer: IntersectionObserver;
+export default class ReactInfiniteScrollerObserver extends Component {
+  observer = null;
 
   componentDidMount() {
     const { root, targetElementClassName } = this.props;
@@ -31,7 +31,7 @@ export default class ReactInfiniteScrollerObserver extends Component<IProps> {
     this.destroyObsever();
   }
 
-  initObserver = (root: HTMLElement, targetElementClassName: string) => {
+  initObserver = (root, targetElementClassName) => {
     if (root) {
       this.destroyObsever();
       this.observer = new IntersectionObserver(this.handleObserverCallback, {
@@ -50,9 +50,9 @@ export default class ReactInfiniteScrollerObserver extends Component<IProps> {
     }
   }
 
-  handleObserverCallback = (entries: IntersectionObserverEntry[]) => {
+  handleObserverCallback = (entries) => {
     const { getELementsInViewport } = this.props;
-    const entriesInViewport: Element[] = [];
+    const entriesInViewport = [];
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const element = entry.target;
